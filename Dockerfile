@@ -1,7 +1,7 @@
-from flask import Flask
+FROM python:3
+WORKDIR /app
+COPY . /app
+RUN pip install -r requirements.txt
+EXPOSE 3000
+CMD python ./index.py
 
-app = Flask(__name__)
-
-@app.route("/")
-def hello_world():
-    return "<p>Hello, World!</p>"
